@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Microsoft.WindowsAzure.MobileServices;
 
 namespace xPlatAuction
 {
@@ -12,6 +13,20 @@ namespace xPlatAuction
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            message.Text = "Loading items...";
+
+            // TODO: change to IIS & localDb
+            MobileServiceClient client = new MobileServiceClient(
+                "https://xplatauctionbackendrcm.azurewebsites.net/");
+
+            var items = await client.GetTable<TodoItem>().ReadAsync();
+            var item = items.First();
+            message.Text = item.Text;
+
         }
     }
 }
