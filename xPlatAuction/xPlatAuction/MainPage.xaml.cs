@@ -20,13 +20,14 @@ namespace xPlatAuction
             message.Text = "Loading items...";
 
             // TODO: change to IIS & localDb
+            //MobileServiceClient client = new MobileServiceClient(
+            //    "https://xplatauctionbackendrcm.azurewebsites.net/");
             MobileServiceClient client = new MobileServiceClient(
-                "https://xplatauctionbackendrcm.azurewebsites.net/");
+                "http://192.168.1.82/xPlatAuction");
 
             var items = await client.GetTable<TodoItem>().ReadAsync();
             var item = items.First();
             message.Text = item.Text;
-
         }
     }
 }
