@@ -169,10 +169,8 @@
     <Compile Include="App_Start\Startup.MobileApp.cs" />
     <Compile Include="App_Start\Startup.Swagger.cs" />
     <Compile Include="Controllers\AuctionController.cs" />
-    <Compile Include="Controllers\TodoItemController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DataObjects\Auction.cs" />
-    <Compile Include="DataObjects\TodoItem.cs" />
     <Compile Include="Migrations\201901190554516_Auction.cs" />
     <Compile Include="Migrations\201901190554516_Auction.Designer.cs">
       <DependentUpon>201901190554516_Auction.cs</DependentUpon>

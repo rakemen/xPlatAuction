@@ -26,7 +26,6 @@ namespace xPlatAuction.backend.Models
         {
         }
 
-        public DbSet<TodoItem> TodoItems { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
